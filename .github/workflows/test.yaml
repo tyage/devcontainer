@@ -1,0 +1,31 @@
+name: Test Dev Container
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/default/**"
+      - ".github/workflows/test.yaml"
+  pull_request:
+    paths:
+      - "src/default/**"
+      - ".github/workflows/test.yaml"
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build and run Dev Container
+        uses: devcontainers/ci@v0.3
+        with:
+          subFolder: src/default
+          push: never
+          runCmd: |
+            docker info
+            docker run --rm hello-world
