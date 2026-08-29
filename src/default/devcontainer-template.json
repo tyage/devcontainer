@@ -1,0 +1,12 @@
+{
+  "id": "default",
+  "version": "1.0.0",
+  "name": "Default Development",
+  "description": "Ubuntu development container with an isolated Docker daemon and the Codex and Claude Code VS Code extensions.",
+  "documentationURL": "https://github.com/tyage/devcontainer/tree/main/src/default",
+  "publisher": "tyage",
+  "licenseURL": "https://github.com/tyage/devcontainer/blob/main/LICENSE",
+  "platforms": [
+    "Any"
+  ]
+}
