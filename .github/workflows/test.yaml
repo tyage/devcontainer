@@ -15,11 +15,17 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runner:
+          - ubuntu-latest
+          - ubuntu-24.04-arm
+
+    runs-on: ${{ matrix.runner }}
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build and run Dev Container
         uses: devcontainers/ci@v0.3
