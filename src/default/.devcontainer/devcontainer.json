@@ -1,0 +1,19 @@
+{
+  "name": "Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "openai.chatgpt",
+        "anthropic.claude-code"
+      ]
+    }
+  },
+
+  "remoteUser": "vscode"
+}
