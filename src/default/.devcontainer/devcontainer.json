@@ -8,6 +8,15 @@
     }
   },
 
+  "mounts": [
+    "source=devcontainer-agent-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
+    "source=devcontainer-agent-codex-${devcontainerId},target=/home/vscode/.codex,type=volume"
+  ],
+
+  "containerEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+  },
+
   "customizations": {
     "vscode": {
       "extensions": [
